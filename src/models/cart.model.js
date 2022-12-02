@@ -15,6 +15,7 @@ const cartSchema = new Schema(
     generatedCode: { type: String, required: true },
     deviceId: { type: String, required: true },
     paymentAmount: { type: Number, default: 0 },
+    total: { type: Number, default: 0 },
     isActive: { type: Boolean, default: true },
     isComplete: { type: Boolean, default: false }
   },
