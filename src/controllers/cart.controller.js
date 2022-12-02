@@ -7,7 +7,7 @@ module.exports.getAllDeviceReceipt = async (req, res) => {
     isActive: true,
     isComplete: true,
     deviceId: req.params.deviceId
-  })
+  }).populate('products.product')
 
   return res.json(carts)
 }
