@@ -14,7 +14,9 @@ module.exports.getAllDeviceReceipt = async (req, res) => {
 
 // Cashier
 module.exports.getCart = async (req, res) => {
-  const cart = await Cart.findOne({ generatedCode: req.params.code })
+  const cart = await Cart.findOne({ generatedCode: req.params.code }).populate(
+    'products.product'
+  )
 
   return res.json(cart)
 }
