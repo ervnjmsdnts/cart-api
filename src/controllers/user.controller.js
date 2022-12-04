@@ -1,7 +1,7 @@
 const User = require('../models/user.model')
 
-module.exports.getAllUsers = async (req, res) => {
-  const users = await User.find({})
+module.exports.getAllUsers = async (_req, res) => {
+  const users = await User.find({ isActive: true })
 
   return res.json(users)
 }
